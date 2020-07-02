@@ -1,6 +1,6 @@
 function [A]=simps(x,y)
 
-% Finds the area under a curve y(x) using Simpson's 2nd rule.
+% Finds the area under a curve y(x) using Simpson's rule.
 % x must have same step spacing and uneven length
 
 n=length(x);
