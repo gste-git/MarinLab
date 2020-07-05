@@ -38,5 +38,5 @@ if N==1 || N==2 || N==3
 V=Re.*ny./l;
 end
 
-fprintf(1,'Re = %4e \n',Re)
+fprintf(1,'V = %.2f \n',V)
 fprintf('-----------------------\n\n')
