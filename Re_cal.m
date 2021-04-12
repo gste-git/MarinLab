@@ -8,7 +8,7 @@ function Re=Re_cal(V,l,N)
 
 % Flow physics
 % rho: [kg/m^3] density
-% ny : [m^2/s]=[stoke] kinematic viscosity (mu/rho) 
+% ny (v) : [m^2/s]=[stoke] kinematic viscosity (my/rho) 
 % my : [Pa s]=[N/m^2-s]=[kg/m-s] dynamic viscosity 1cPoise =10^-3  
 
 if N==1 % MarinLab
