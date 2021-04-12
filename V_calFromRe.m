@@ -8,25 +8,25 @@ function V=V_calFromRe(Re,l,N)
 
 % Flow physics
 % rho: [kg/m^3] density
-% ny : [m^2/s]=[stoke] kinematic viscosity (mu/rho) 
-% mu : [Pa s]=[N/m^2-s]=[kg/m-s] dynamic viscosity 1cPoise =10^-3  
+% ny (v): [m^2/s]=[stoke] kinematic viscosity (my/rho) 
+% my : [Pa s]=[N/m^2-s]=[kg/m-s] dynamic viscosity 1cPoise =10^-3  
 
 if N==1 % MarinLab
 rho = 999.1026;  %fresh water 15 deg ITTC 7.5-02-01-03
 ny =1.1386e-06; % fresh water 15 deg ITTC 7.5-02-01-03
-mu =ny*rho; 
+my =ny*rho; 
 fprintf('-----------------------')
 fprintf(1,'\nFresh water: 15 deg ITTC\n')
 elseif N==2 % Sea water
 rho = 1026.021;  % sea water 15 deg ITTC 7.5-02-01-03
 ny =1.1892e-06; % sea water 15 deg ITTC 7.5-02-01-03
-mu =ny*rho; 
+my =ny*rho; 
 fprintf('-----------------------')
 fprintf(1,'\nSea water: 15 deg ITTC\n')
 elseif N==3 % Air STD atm
 rho=1.225;        % density of air at standard atmospehere, 15 deg
 ny= 1.470e-05;
-mu =ny*rho;
+my =ny*rho;
 fprintf('-----------------------')
 fprintf(1,'\nAir: 15 deg STD\n')
 else
@@ -37,6 +37,8 @@ end
 if N==1 || N==2 || N==3 
 V=Re.*ny./l;
 end
-
+fprintf(1,'Density, rho = %.2f kg/m^³ \n',rho)
+fprintf(1,'Kinematic viscosity, ny (v) = %.4e m^2/s \n',ny)
+fprintf(1,'Dynamic viscosity, my = %.6f Pa s \n',my)
 fprintf(1,'V = %.2f \n',V)
 fprintf('-----------------------\n\n')
